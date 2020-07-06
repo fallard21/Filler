@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 21:55:55 by fallard           #+#    #+#             */
-/*   Updated: 2020/06/20 02:00:12 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:39:09 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void			reinitialisation(t_map *map, t_piece *piece);
 int				get_player(t_map *map);
 int				get_play_board(t_map *map, t_piece *piece);
 void			back_player(t_map *map);
-int				go_playing(t_map *map, t_piece* piece);
+int				go_playing(t_map *map, t_piece *piece);
 int				is_player(int c);
 
 /*
@@ -93,13 +93,12 @@ void			free_all_memory(t_map *map, t_piece *piece);
 int				free_split(char ***str);
 int				end_program(t_map *map, t_piece *piece);
 
-
 // DELETE
-void	print_map(t_map *map);
-void	print_arr(t_map *map);
-void	print_real_arr(t_map *map);
-void	print_piece(t_piece	*piece);
-void    print_coords(t_piece *piece);
-void	set_piece(t_map *map, t_piece *piece, int shift);
+void			print_map(t_map *map);
+void			print_arr(t_map *map);
+void			print_real_arr(t_map *map);
+void			print_piece(t_piece	*piece);
+void			print_coords(t_piece *piece);
+void			set_piece(t_map *map, t_piece *piece, int shift);
 
 #endif

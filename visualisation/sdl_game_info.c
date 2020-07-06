@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/20 01:04:14 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:04:11 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:19:53 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		vis_getplayer(t_visu *visu)
 	int		ret;
 
 	i = 0;
-	while(i < 9)
+	while (i < 9)
 	{
 		if ((ret = get_next_line(0, &visu->line)) < 1)
 			return (1);

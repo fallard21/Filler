@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 12:11:02 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 01:30:44 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:17:20 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	sdl_prepare_map(t_sdl *draw, t_visu *visu)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while(i < visu->map_y)
+	i = 0;
+	while (i < visu->map_y)
 	{
 		draw_line(draw, visu, i);
 		draw->cube_rect.y += visu->diff_y;
-        i++;
+		i++;
 	}
 	SDL_RenderPresent(draw->rend);
 }
@@ -32,7 +32,7 @@ void	draw_line(t_sdl *draw, t_visu *visu, int i)
 
 	j = 0;
 	draw->cube_rect.x = visu->x;
-	while(j < visu->map_x)
+	while (j < visu->map_x)
 	{
 		if (visu->map[i][j] == '.')
 			SDL_SetRenderDrawColor(draw->rend, 200, 200, 200, 1);
@@ -58,7 +58,7 @@ void	draw_line_1(t_sdl *draw, t_visu *visu, int i)
 
 	j = 0;
 	draw->cube_rect.x = visu->x;
-	while(j < visu->map_x)
+	while (j < visu->map_x)
 	{
 		if (visu->map[i][j] == 'o')
 			SDL_SetRenderDrawColor(draw->rend, 0, 27, 255, 1);

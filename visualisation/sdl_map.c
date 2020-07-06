@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 19:53:14 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:04:59 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:24:01 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	vis_read_map(t_visu *visu)
 
 	i = 0;
 	visu->line = NULL;
-	while(i < visu->map_y)
+	while (i < visu->map_y)
 	{
 		if ((ret = get_next_line(0, &visu->line)) < 1)
 			return (1);
@@ -63,7 +63,7 @@ int	save_line(t_visu *visu, char *line, int i)
 		return (1);
 	line = line + 4;
 	j = 0;
-	while(j < visu->map_x)
+	while (j < visu->map_x)
 	{
 		visu->map[i][j] = line[j];
 		j++;

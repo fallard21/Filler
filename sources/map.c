@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:57:48 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:01:00 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:36:59 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		save_map_size(t_map *map)
 	char	**str;
 	int		i;
 	int		ret;
-	
+
 	i = 0;
 	ret = get_next_line(0, &map->line);
 	if (ret <= 0)

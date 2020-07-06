@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 12:24:36 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 01:31:27 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:26:16 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 void	sdl_main_loop(t_sdl *d, t_visu *visu)
 {
 	d->keyboard = SDL_GetKeyboardState(NULL);
-    d->quit = 0;
+	d->quit = 0;
 	d->flag = 1;
-	while(!d->quit)
+	while (!d->quit)
 	{
-		while(SDL_PollEvent(&d->event))
+		while (SDL_PollEvent(&d->event))
 		{
 			if (d->event.type == SDL_QUIT || d->keyboard[SDL_SCANCODE_ESCAPE])
 				d->quit = 1;
 			if (d->keyboard[SDL_SCANCODE_RIGHT] && d->flag == 1)
 				sdl_move_right(d, visu);
-			//SDL_RenderPresent(d->rend); // ??
-        }	
-    }
+		}
+	}
 }
 
 void	sdl_move_right(t_sdl *d, t_visu *visu)
@@ -55,12 +54,12 @@ int		vis_skip_token(t_visu *visu)
 {
 	int ret;
 
-	while(1)
+	while (1)
 	{
 		if ((ret = get_next_line(0, &visu->line)) < 1)
 			exit(1);
 		if (ft_strstr(visu->line, "0123456789"))
-			break;
+			break ;
 		if (ft_strstr(visu->line, "O fin"))
 			visu->score1 = atoi(visu->line + 10);
 		if (ft_strstr(visu->line, "X fin"))

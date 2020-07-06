@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 15:49:18 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:08:31 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 21:38:49 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define DIS_X 40
 # define DIS_Y 40
 
-typedef struct s_visu
+typedef struct		s_visu
 {
 	int				**map;
 	int				map_x;
@@ -42,7 +42,7 @@ typedef struct s_visu
 	int				score2;
 }					t_visu;
 
-typedef struct s_sdl
+typedef struct		s_sdl
 {
 	SDL_Window		*window;
 	SDL_Renderer	*rend;
@@ -50,7 +50,6 @@ typedef struct s_sdl
 	SDL_Texture		*background;
 	SDL_Rect		back_rect;
 
-	SDL_Texture		*cube;
 	SDL_Rect		cube_rect;
 
 	TTF_Font		*font;

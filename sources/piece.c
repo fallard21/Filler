@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 15:59:54 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:01:35 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:37:46 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		save_piece_size(t_map *map, t_piece *piece)
 	char	**str;
 	int		i;
 	int		ret;
-	
+
 	if ((ret = get_next_line(0, &map->line)) < 1)
 		return (1);
 	if (ft_strncmp("Piece", map->line, 5) != 0)
@@ -47,7 +47,7 @@ int		save_piece(t_map *map, t_piece *piece)
 	tmp = NULL;
 	if (!(piece->piece = ft_strnew(0)))
 		return (1);
-	while(i++ < piece->size_y)
+	while (i++ < piece->size_y)
 	{
 		if ((ret = get_next_line(0, &map->line)) < 1)
 			return (1);
@@ -85,14 +85,14 @@ int		save_coords(t_piece *piece)
 	piece->size_c = get_wildc_count(piece);
 	if (!(piece->coords = ft_memalloc(sizeof(int*) * piece->size_c)))
 		return (1);
-	while(i < piece->size_c)
+	while (i < piece->size_c)
 	{
 		if (!(piece->coords[i++] = ft_memalloc(sizeof(int) * 2)))
 			return (1);
 	}
 	i = 0;
 	j = 0;
-	while(piece->piece[i])
+	while (piece->piece[i])
 	{
 		if (piece->piece[i] == '*')
 		{

@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 20:10:03 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 01:30:59 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:19:35 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	vis_free_split(char ***str)
 	i = 0;
 	if (!(*str))
 		return ;
-	while((*str)[i])
+	while ((*str)[i])
 		ft_memdel((void**)&(*str)[i++]);
 	ft_memdel((void**)&(*str));
 }
@@ -31,7 +31,7 @@ int		vis_end(t_visu *visu)
 	i = 0;
 	if (visu->map)
 	{
-		while(i < visu->map_y)
+		while (i < visu->map_y)
 			ft_memdel((void**)&visu->map[i++]);
 		ft_memdel((void**)&visu->map);
 	}

@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 13:34:20 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 02:13:19 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:19:16 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	draw_results(t_sdl *draw, t_visu *visu)
 		win = ft_strjoin(visu->player2, " won!");
 	else
 		win = ft_strdup("Draw!");
-    if (win == NULL)
-	{
-        ft_exit(draw, 3);
-	}
+	if (win == NULL)
+		ft_exit(draw, 3);
 	len = ft_strlen(win);
 	if (!(draw->font = TTF_OpenFont("../visualisation/data/18301.ttf", 200)))
 		ft_exit(draw, 1);
@@ -37,7 +35,7 @@ void	draw_results(t_sdl *draw, t_visu *visu)
 	draw->font = NULL;
 }
 
-void    draw_winner(t_sdl *d, char *win, int len)
+void	draw_winner(t_sdl *d, char *win, int len)
 {
 	d->font_rect.w = len * 20;
 	d->font_rect.h = 40;
@@ -45,17 +43,17 @@ void    draw_winner(t_sdl *d, char *win, int len)
 	d->font_rect.y = DIS_H * 0.93;
 	d->color = (SDL_Color){0, 0, 0, 1};
 	if (!(d->area = TTF_RenderText_Blended(d->font, win, d->color)))
-        ft_exit(d, 2);
+		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
-        ft_exit(d, 3);
+		ft_exit(d, 3);
 	SDL_RenderCopy(d->rend, d->fontex, NULL, &d->font_rect);
 	sdl_memdel(&d->area, &d->fontex);
 	TTF_SetFontOutline(d->font, 4);
 	d->color = (SDL_Color){255, 255, 0, 1};
 	if (!(d->area = TTF_RenderText_Blended(d->font, win, d->color)))
-        ft_exit(d, 2);
+		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
-        ft_exit(d, 3);
+		ft_exit(d, 3);
 	SDL_RenderCopy(d->rend, d->fontex, NULL, &d->font_rect);
 	sdl_memdel(&d->area, &d->fontex);
 }
@@ -74,7 +72,7 @@ void	draw_scores(t_sdl *d, t_visu *visu)
 	d->font_rect.h = 40;
 	d->font_rect.y = DIS_H / 2;
 	d->color = (SDL_Color){255, 255, 0, 1};
-	draw_scores_2(d,sc1, sc2);
+	draw_scores_2(d, sc1, sc2);
 	free(sc1);
 	free(sc2);
 }

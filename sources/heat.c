@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 23:38:41 by tima              #+#    #+#             */
-/*   Updated: 2020/06/12 16:01:06 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:35:29 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	fill_heat_map(t_map *map, int a, int b)
 {
 	int i;
 	int j;
-	
+
 	i = 0;
-	while(i < map->size_y)
+	while (i < map->size_y)
 	{
 		j = 0;
-		while(j < map->size_x)
+		while (j < map->size_x)
 		{
 			if (map->arr[i][j] == a)
 				init_heat_map(map, i, j, b);
@@ -49,7 +49,8 @@ void	init_heat_map(t_map *map, int i, int j, int b)
 		tmp[i + 1][j] = b;
 	if (i > 0 && is_heating(tmp[i - 1][j]))
 		tmp[i - 1][j] = b;
-	if (i < map->size_y - 1 && j < map->size_x - 1 && is_heating(tmp[i + 1][j + 1]))
+	if (i < map->size_y - 1 && j < map->size_x - 1
+		&& is_heating(tmp[i + 1][j + 1]))
 		tmp[i + 1][j + 1] = b;
 	if (i > 0 && j > 0 && is_heating(tmp[i - 1][j - 1]))
 		tmp[i - 1][j - 1] = b;
@@ -59,16 +60,16 @@ void	init_heat_map(t_map *map, int i, int j, int b)
 		tmp[i - 1][j + 1] = b;
 }
 
-int     check_dot(t_map *map)
+int		check_dot(t_map *map)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while(i < map->size_y)
+	while (i < map->size_y)
 	{
 		j = 0;
-		while(j < map->size_x)
+		while (j < map->size_x)
 		{
 			if (map->arr[i][j] == -5)
 				return (0);

@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 12:05:39 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 01:55:21 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/07 00:22:57 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void	sdl_init(t_sdl *draw)
 		ft_printf("Error initialising TTF\n");
 		exit(EXIT_FAILURE);
 	}
-	draw->window = SDL_CreateWindow("Project Filler", DIS_X, DIS_Y, DIS_W, DIS_H, SDL_WINDOW_SHOWN);
-    if (!draw->window)
+	draw->window = SDL_CreateWindow("Project Filler", \
+	DIS_X, DIS_Y, DIS_W, DIS_H, SDL_WINDOW_SHOWN);
+	if (!draw->window)
 		ft_exit(draw, 5);
 	draw->rend = SDL_CreateRenderer(draw->window, -1, SDL_RENDERER_ACCELERATED);
 	if (!draw->rend)
@@ -38,7 +39,7 @@ void	sdl_init(t_sdl *draw)
 }
 
 void	sdl_init_cube(t_sdl *draw, t_visu *visu)
-{	
+{
 	if (visu->map_y == 15)
 	{
 		draw->cube_rect.w = 35;
@@ -63,7 +64,8 @@ void	sdl_init_cube(t_sdl *draw, t_visu *visu)
 
 void	sdl_background(t_sdl *draw)
 {
-	draw->background = IMG_LoadTexture(draw->rend, "../visualisation/data/pic_1_(2).jpg");
+	draw->background = IMG_LoadTexture(draw->rend, \
+		"../visualisation/data/background.jpg");
 	if (!draw->background)
 		ft_exit(draw, 7);
 	draw->back_rect.x = 0;

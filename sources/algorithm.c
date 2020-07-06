@@ -6,7 +6,7 @@
 /*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 23:20:50 by tima              #+#    #+#             */
-/*   Updated: 2020/05/27 18:41:22 by tima             ###   ########.fr       */
+/*   Updated: 2020/07/06 20:31:54 by tima             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,11 @@ int		solve(t_map *map, t_piece *piece)
 		if (check_coords(map, piece, piece->shift))
 		{
 			if (is_one_contact(map, piece, piece->shift))
-			{
 				sum_piece(map, piece, piece->shift);
-			}
 		}
 		piece->shift++;
 	}
-	//set_piece(map, piece, map->fin_sh);
 	ft_printf("%d %d\n", map->fin_y, map->fin_x);
-	//print_arr(map);
 	if (map->fin_sh == -1)
 		return (1);
 	return (0);
@@ -45,7 +41,7 @@ int		check_coords(t_map *map, t_piece *piece, int shift)
 	if (piece->size_y - 1 + shift / map->size_x >= map->size_y)
 		return (0);
 	i = 0;
-	while(i < piece->size_c)
+	while (i < piece->size_c)
 	{
 		x = piece->coords[i][0] + shift % map->size_x;
 		y = piece->coords[i][1] + shift / map->size_x;
@@ -67,7 +63,7 @@ int		is_one_contact(t_map *map, t_piece *piece, int shift)
 
 	count = 0;
 	i = 0;
-	while(i < piece->size_c)
+	while (i < piece->size_c)
 	{
 		x = piece->coords[i][0] + shift % map->size_x;
 		y = piece->coords[i][1] + shift / map->size_x;
@@ -91,7 +87,7 @@ void	sum_piece(t_map *map, t_piece *piece, int shift)
 
 	sum = 0;
 	i = 0;
-	while(i < piece->size_c)
+	while (i < piece->size_c)
 	{
 		x = piece->coords[i][0] + shift % map->size_x;
 		y = piece->coords[i][1] + shift / map->size_x;
@@ -108,21 +104,20 @@ void	sum_piece(t_map *map, t_piece *piece, int shift)
 	}
 }
 
-
+/*
 void	set_piece(t_map *map, t_piece *piece, int shift)
 {
 	int i;
 	int x;
 	int y;
 
-	//piece->shift = 430;
 	i = 0;
-	while(i < piece->size_c)
+	while (i < piece->size_c)
 	{
 		x = piece->coords[i][0] + shift % map->size_x;
 		y = piece->coords[i][1] + shift / map->size_x;
-		//ft_printf("[%d] x: %d, y: %d\n", i, x, y);
 		map->arr[y][x] = -10;
 		i++;
 	}
 }
+*/
