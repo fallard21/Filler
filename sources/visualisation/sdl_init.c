@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/16 12:05:39 by tima              #+#    #+#             */
-/*   Updated: 2020/07/07 00:22:57 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:27:49 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 21:08:50 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,14 @@ void	sdl_init_cube(t_sdl *draw, t_visu *visu)
 	}
 	visu->diff_x = draw->cube_rect.w - 1;
 	visu->diff_y = draw->cube_rect.h - 1;
-	visu->x = (DIS_W - (visu->diff_x * visu->map_x)) / 2;
-	draw->cube_rect.x = visu->x;
+	visu->start_x = (DIS_W - (visu->diff_x * visu->map_x)) / 2;
+	draw->cube_rect.x = visu->start_x;
 	draw->cube_rect.y = 150;
 }
 
 void	sdl_background(t_sdl *draw)
 {
-	draw->background = IMG_LoadTexture(draw->rend, \
-		"../visualisation/data/background.jpg");
+	draw->background = IMG_LoadTexture(draw->rend, BACKGROUND);
 	if (!draw->background)
 		ft_exit(draw, 7);
 	draw->back_rect.x = 0;
@@ -78,7 +77,7 @@ void	sdl_background(t_sdl *draw)
 
 void	sdl_title(t_sdl *d)
 {
-	if (!(d->font = TTF_OpenFont("../visualisation/data/2.ttf", 200)))
+	if (!(d->font = TTF_OpenFont(TITLE, 200)))
 		ft_exit(d, 1);
 	d->color = (SDL_Color){0, 220, 20, 1};
 	if (!(d->area = TTF_RenderText_Blended(d->font, "Filler", d->color)))

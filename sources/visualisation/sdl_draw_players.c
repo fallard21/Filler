@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_draw_players.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/15 17:39:35 by tima              #+#    #+#             */
-/*   Updated: 2020/06/20 01:55:35 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 19:38:28 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 19:38:32 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	draw_players(t_sdl *draw, t_visu *visu)
 
 	len1 = ft_strlen(visu->player1);
 	len2 = ft_strlen(visu->player2);
-	if (!(draw->font = TTF_OpenFont("../visualisation/data/18341.ttf", 200)))
+	if (!(draw->font = TTF_OpenFont(PLAYERS, 200)))
 		ft_exit(draw, 1);
 	draw->font_rect.h = 45;
 	draw->font_rect.y = DIS_H * 0.11;

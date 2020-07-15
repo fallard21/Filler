@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_draw_results.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/15 13:34:20 by tima              #+#    #+#             */
-/*   Updated: 2020/07/07 00:19:16 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:27:13 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 20:27:15 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	draw_results(t_sdl *draw, t_visu *visu)
 	if (win == NULL)
 		ft_exit(draw, 3);
 	len = ft_strlen(win);
-	if (!(draw->font = TTF_OpenFont("../visualisation/data/18301.ttf", 200)))
+	if (!(draw->font = TTF_OpenFont(RESULTS, 200)))
 		ft_exit(draw, 1);
 	draw_winner(draw, win, len);
 	draw_scores(draw, visu);

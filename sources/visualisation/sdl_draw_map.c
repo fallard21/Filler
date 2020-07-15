@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_draw_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/16 12:11:02 by tima              #+#    #+#             */
-/*   Updated: 2020/07/07 00:17:20 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 19:34:56 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 21:07:49 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	draw_line(t_sdl *draw, t_visu *visu, int i)
 	int j;
 
 	j = 0;
-	draw->cube_rect.x = visu->x;
+	draw->cube_rect.x = visu->start_x;
 	while (j < visu->map_x)
 	{
 		if (visu->map[i][j] == '.')
@@ -57,7 +57,7 @@ void	draw_line_1(t_sdl *draw, t_visu *visu, int i)
 	int j;
 
 	j = 0;
-	draw->cube_rect.x = visu->x;
+	draw->cube_rect.x = visu->start_x;
 	while (j < visu->map_x)
 	{
 		if (visu->map[i][j] == 'o')

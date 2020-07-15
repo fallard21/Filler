@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_free_mem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/13 20:10:03 by tima              #+#    #+#             */
-/*   Updated: 2020/07/07 00:19:35 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:27:04 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 20:27:06 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		vis_end(t_visu *visu)
 	ft_memdel((void**)&visu->line);
 	ft_memdel((void**)&visu->player1);
 	ft_memdel((void**)&visu->player2);
-	return (1);
+	return (EXIT_FAILURE);
 }
 
 int		ft_exit(t_sdl *draw, int status)

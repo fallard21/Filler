@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sdl_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/13 19:53:14 by tima              #+#    #+#             */
-/*   Updated: 2020/07/07 00:24:01 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:31:21 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 20:41:17 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,13 @@ int	vis_read_map(t_visu *visu)
 
 int	save_line(t_visu *visu, char *line, int i)
 {
-	int		j;
+	int	j;
+	int	len;
 
-	if ((int)ft_strlen(line) < visu->map_x + 4)
+	if (!line)
+		return (1);
+	len = ft_strlen(line);
+	if (len != visu->map_x + 4)
 		return (1);
 	line = line + 4;
 	j = 0;
