@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 15:57:48 by tima              #+#    #+#             */
-/*   Updated: 2020/07/06 20:36:59 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:31:33 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/14 01:16:56 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int		save_map(t_map *map)
 	if ((ret = get_next_line(0, &map->line)) < 1)
 		return (1);
 	ft_memdel((void**)&map->line);
-	if (!(map->map = ft_memalloc(sizeof(char*) * (map->size_y + 1))))
+	if (!(map->map = ft_calloc((map->size_y + 1), sizeof(char*))))
 		return (1);
 	i = 0;
 	while (i < map->size_y)
 	{
 		if ((ret = get_next_line(0, &map->line)) < 1)
 			return (1);
-		if (ft_strlen(map->line) < 5)
+		if ((int)ft_strlen(map->line) != map->size_x + 4)
 			return (1);
 		toupper_player(map->line + 4, map->enemy);
 		map->map[i] = ft_strdup(map->line + 4);

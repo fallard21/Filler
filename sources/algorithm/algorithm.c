@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/26 23:20:50 by tima              #+#    #+#             */
-/*   Updated: 2020/07/06 20:31:54 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:31:49 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 20:31:50 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,21 +103,3 @@ void	sum_piece(t_map *map, t_piece *piece, int shift)
 		map->sum = sum;
 	}
 }
-
-/*
-void	set_piece(t_map *map, t_piece *piece, int shift)
-{
-	int i;
-	int x;
-	int y;
-
-	i = 0;
-	while (i < piece->size_c)
-	{
-		x = piece->coords[i][0] + shift % map->size_x;
-		y = piece->coords[i][1] + shift / map->size_x;
-		map->arr[y][x] = -10;
-		i++;
-	}
-}
-*/

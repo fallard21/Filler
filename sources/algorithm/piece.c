@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   piece.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 15:59:54 by tima              #+#    #+#             */
-/*   Updated: 2020/07/06 20:37:46 by tima             ###   ########.fr       */
+/*   Created: 2020/07/12 20:32:58 by fallard           #+#    #+#             */
+/*   Updated: 2020/07/12 20:33:05 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-#include <unistd.h>
 
 int		save_piece_size(t_map *map, t_piece *piece)
 {
