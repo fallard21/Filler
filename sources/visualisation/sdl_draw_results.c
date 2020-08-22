@@ -6,7 +6,7 @@
 /*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 20:27:13 by fallard           #+#    #+#             */
-/*   Updated: 2020/07/12 20:27:15 by fallard          ###   ########.fr       */
+/*   Updated: 2020/08/22 21:02:03 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	draw_scores(t_sdl *d, t_visu *visu)
 
 	sc1 = ft_itoa(visu->score1);
 	sc2 = ft_itoa(visu->score2);
-	sc1 = ft_strjoin_free("p1 = ", sc1);
-	sc2 = ft_strjoin_free("p2 = ", sc2);
+	sc1 = ft_strjoin_free("p1 = ", sc1, 2);
+	sc2 = ft_strjoin_free("p2 = ", sc2, 2);
 	if (!sc1 || !sc2)
 		ft_exit(d, 4);
 	d->font_rect.h = 40;

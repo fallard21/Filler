@@ -6,14 +6,14 @@
 #    By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/12 16:25:19 by fallard           #+#    #+#              #
-#    Updated: 2020/07/14 03:14:21 by fallard          ###   ########.fr        #
+#    Updated: 2020/08/22 21:02:56 by fallard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fallard.filler
 VISUAL = visualizer
 
-CC = gcc
+CC = gcc -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror
 
 HEAD_NAME = filler.h
@@ -81,12 +81,12 @@ clean:
 	@rm -f $(TMP)
 	@rm -f $(TMP_VIS)
 	@make clean -C $(LIB_DIR)
-	@printf "$(YW)Filler: $(RD)Object files deleted!\n$(EOC)"
+	@printf "$(YW)Filler: $(RD)Object files deleted.\n$(EOC)"
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(VISUAL)
 	@make fclean -C $(LIB_DIR)
-	@printf "$(YW)Filler: $(RD)Player $(NAME), program $(VISUAL) and object files deleted\n$(EOC)"
+	@printf "$(YW)Filler: $(RD)Player $(NAME) and program $(VISUAL) deleted.\n$(EOC)"
 
 re: fclean all
