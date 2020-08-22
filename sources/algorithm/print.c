@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tima <tima@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 16:01:08 by tima              #+#    #+#             */
-/*   Updated: 2020/06/12 15:13:00 by tima             ###   ########.fr       */
+/*   Updated: 2020/08/22 21:17:55 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	print_map(t_map *map)
 {
-	int i;
-	int j;
-	int size;
-	char **str;
-	int width;
+	int		i;
+	int		j;
+	int		size;
+	char	**str;
+	int		width;
 
 	width = 2;
 	i = 0;
@@ -28,7 +28,7 @@ void	print_map(t_map *map)
 	ft_printf("Plateau: %d %d:\n", map->size_y, map->size_x);
 	// PRINT COORDINATES X
 	ft_printf("    ");
-	while(size)
+	while (size)
 	{
 		ft_printf("{3}%*d{0}", width, j);
 		j++;
@@ -39,11 +39,11 @@ void	print_map(t_map *map)
 	ft_putchar('\n');
 	// PRINT MAP
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		j = 0;
 		ft_printf("{3}%03d{0} ", i);
-		while(str[i][j])
+		while (str[i][j])
 		{
 			if (str[i][j] == 'O')
 				ft_printf("{2}%*c{0}", width, str[i][j]);
@@ -65,11 +65,11 @@ void	print_real_arr(t_map *map)
 	int j;
 
 	i = 0;
-	while(i < map->size_y)
+	while (i < map->size_y)
 	{
 		j = 0;
 		ft_printf("%03d ", i);
-		while(j < map->size_x)
+		while (j < map->size_x)
 		{
 			if (map->arr[i][j] == -1)
 				ft_printf("{6}%3d{0}", map->arr[i][j]);
@@ -103,7 +103,7 @@ void	print_arr(t_map *map)
 	ft_printf("Plateau: %d %d:\n", map->size_y, map->size_x);
 	// PRINT COORDINATES X
 	ft_printf("    ");
-	while(size)
+	while (size)
 	{
 		ft_printf("{3}%*d{0}", width, j);
 		j++;
@@ -114,11 +114,11 @@ void	print_arr(t_map *map)
 	ft_putchar('\n');
 	// PRINT MAP
 	i = 0;
-	while(i < map->size_y)
+	while (i < map->size_y)
 	{
 		j = 0;
 		ft_printf("{3}%03d{0} ", i);
-		while(j < map->size_x)
+		while (j < map->size_x)
 		{
 			if (str[i][j] == -1)
 				ft_printf("{6}%*c{0}", width, 'X');
@@ -126,7 +126,7 @@ void	print_arr(t_map *map)
 				ft_printf("{2}%*c{0}", width, 'O');
 			else if (str[i][j] == -5)
 				ft_printf("%*c", width, '.');
-            else if (str[i][j] == -10)
+			else if (str[i][j] == -10)
 				ft_printf("{1}%*c{0}", width, '*');
 			else
 				ft_printf("%*d", width, str[i][j]);
@@ -138,10 +138,10 @@ void	print_arr(t_map *map)
 	ft_putchar('\n');
 }
 
-void	print_piece(t_piece	*piece)
+void	print_piece(t_piece *piece)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = piece->piece;
@@ -156,14 +156,14 @@ void	print_piece(t_piece	*piece)
 	ft_putchar('\n');
 }
 
-void    print_coords(t_piece *piece)
+void	print_coords(t_piece *piece)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (i < piece->size_c)
-    {
-        ft_printf("%d: x: %d, y: %d\n", i + 1, piece->coords[i][0], piece->coords[i][1]);
-        i++;
-    }
+	i = 0;
+	while (i < piece->size_c)
+	{
+		ft_printf("%d: x: %d, y: %d\n", i + 1, piece->coords[i][0], piece->coords[i][1]);
+		i++;
+	}
 }
