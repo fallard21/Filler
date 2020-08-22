@@ -6,14 +6,14 @@
 #    By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/12 16:25:19 by fallard           #+#    #+#              #
-#    Updated: 2020/08/22 21:02:56 by fallard          ###   ########.fr        #
+#    Updated: 2020/08/22 21:09:05 by fallard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fallard.filler
 VISUAL = visualizer
 
-CC = gcc -fsanitize=address
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 HEAD_NAME = filler.h
@@ -63,11 +63,11 @@ SDL_INC = -lSDL2 -lSDL2_image -lSDL2_ttf
 
 all: $(LIBFT) $(NAME) $(VISUAL)
 	
-$(NAME): $(TMP)
+$(NAME): $(LIBFT) $(TMP)
 	@$(CC) $(CFLAGS) -o $(NAME) $(TMP) $(INCLUDES) -L $(LIB_DIR) -lft
 	@printf "$(CN)<< Player $(NAME) created >>\n$(EOC)"
 
-$(VISUAL): $(TMP_VIS)
+$(VISUAL): $(LIBFT) $(TMP_VIS)
 	@$(CC) $(CFLAGS) -o $(VISUAL) $(TMP_VIS) $(INCLUDES) $(SDL_INC) -L $(LIB_DIR) -lft
 	@printf "$(CN)<< Program $(VISUAL) created >>\n$(EOC)"
 
