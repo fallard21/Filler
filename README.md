@@ -1,7 +1,8 @@
 # FILLER
 Filler is an algorithmic game which consists in filling a grid of a known size in advance with pieces of random size and shapes, without the pieces being stacked more than one square above each other and without them exceeding the grid.
 ## Algorithm
-	Heat map
+* Heat map
+* [Chebyshev distance](https://en.wikipedia.org/wiki/Chebyshev_distance)
 ## Bonus
 Graphic visualizer written using a library `SDL2`
 
