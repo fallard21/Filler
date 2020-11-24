@@ -1,0 +1,8 @@
+*.o
+.DS*
+*.a
+*.txt
+*.filler
+notes
+*.trace
+visualizer

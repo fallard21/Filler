@@ -6,7 +6,7 @@
 /*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 19:38:28 by fallard           #+#    #+#             */
-/*   Updated: 2020/07/12 19:38:32 by fallard          ###   ########.fr       */
+/*   Updated: 2020/11/24 17:27:53 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	draw_fill(t_sdl *d, t_visu *visu, int len1, int len2)
 {
 	d->font_rect.w = len1 * 15;
 	d->font_rect.x = 50;
-	d->color = (SDL_Color){0, 70, 200, 1};
+	d->color = (SDL_Color){0, 70, 200, 255};
 	if (!(d->area = TTF_RenderText_Blended(d->font, visu->player1, d->color)))
 		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
@@ -55,7 +55,7 @@ void	draw_curcuit(t_sdl *d, t_visu *visu, int len1, int len2)
 {
 	d->font_rect.w = len1 * 15;
 	d->font_rect.x = 50;
-	d->color = (SDL_Color){0, 0, 0, 1};
+	d->color = (SDL_Color){0, 0, 0, 255};
 	TTF_SetFontOutline(d->font, 3);
 	if (!(d->area = TTF_RenderText_Blended(d->font, visu->player1, d->color)))
 		ft_exit(d, 2);

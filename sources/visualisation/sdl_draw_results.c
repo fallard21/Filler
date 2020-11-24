@@ -6,7 +6,7 @@
 /*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 20:27:13 by fallard           #+#    #+#             */
-/*   Updated: 2020/08/22 21:02:03 by fallard          ###   ########.fr       */
+/*   Updated: 2020/11/24 17:28:13 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	draw_winner(t_sdl *d, char *win, int len)
 	d->font_rect.h = 40;
 	d->font_rect.x = (DIS_W / 2) - (d->font_rect.w / 2);
 	d->font_rect.y = DIS_H * 0.93;
-	d->color = (SDL_Color){0, 0, 0, 1};
+	d->color = (SDL_Color){0, 0, 0, 255};
 	if (!(d->area = TTF_RenderText_Blended(d->font, win, d->color)))
 		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
@@ -49,7 +49,7 @@ void	draw_winner(t_sdl *d, char *win, int len)
 	SDL_RenderCopy(d->rend, d->fontex, NULL, &d->font_rect);
 	sdl_memdel(&d->area, &d->fontex);
 	TTF_SetFontOutline(d->font, 4);
-	d->color = (SDL_Color){255, 255, 0, 1};
+	d->color = (SDL_Color){255, 255, 0, 255};
 	if (!(d->area = TTF_RenderText_Blended(d->font, win, d->color)))
 		ft_exit(d, 2);
 	if (!(d->fontex = SDL_CreateTextureFromSurface(d->rend, d->area)))
@@ -71,7 +71,7 @@ void	draw_scores(t_sdl *d, t_visu *visu)
 		ft_exit(d, 4);
 	d->font_rect.h = 40;
 	d->font_rect.y = DIS_H / 2;
-	d->color = (SDL_Color){255, 255, 0, 1};
+	d->color = (SDL_Color){255, 255, 0, 255};
 	draw_scores_2(d, sc1, sc2);
 	free(sc1);
 	free(sc2);

@@ -6,7 +6,7 @@
 /*   By: fallard <fallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/12 20:27:49 by fallard           #+#    #+#             */
-/*   Updated: 2020/07/12 21:08:50 by fallard          ###   ########.fr       */
+/*   Updated: 2020/11/24 16:10:54 by fallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sdl_init(t_sdl *draw)
 {
 	int status;
 
-	memset(draw, 0, sizeof(t_sdl));
+	ft_memset(draw, 0, sizeof(t_sdl));
 	status = SDL_Init(SDL_INIT_EVERYTHING);
 	if (status)
 	{
