@@ -40,3 +40,7 @@ or
 
 ./run.sh maps/map01 ../fallard.filler ./champions/abanlin.filler
 ```
+
+
+## Supported OS
+* Ubuntu
